@@ -1,1 +1,15 @@
-Hello World!
+<span id="s"></span>
+<script>
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function demo() {
+  var i = 0;
+  while(true) {
+    document.getElementById("s").innerHTML = '.'.repeat(i);
+    i = (i+1)%4;
+    await sleep(500);
+  }
+}
+demo();
+</script>
